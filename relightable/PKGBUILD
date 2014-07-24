@@ -1,0 +1,18 @@
+# Maintainer: Felix Laurie von Massenbach <felix@erbridge.co.uk>
+
+pkgname=relightable
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="A customizable theme for Enlightment."
+arch=('any')
+url="http://relightable.c0n.de/"
+license=('custom')
+depends=()
+source=("http://relightable.c0n.de/themes/rElightable.edj")
+noextract=("rElightable.edj")
+md5sums=('fe914202efe2f2fb9ed707970b6fac27')
+
+package() {
+  mkdir -p "$pkgdir/usr/share/elementary/themes"
+  cp rElightable.edj "$pkgdir/usr/share/elementary/themes/"
+}
