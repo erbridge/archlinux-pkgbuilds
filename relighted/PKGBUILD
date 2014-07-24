@@ -1,0 +1,18 @@
+# Maintainer: Felix Laurie von Massenbach <felix@erbridge.co.uk>
+
+pkgname=relighted
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="A customizable theme for Enlightment."
+arch=('any')
+url="http://relighted.c0n.de/"
+license=('custom')
+depends=()
+source=("rElighted-white.edj::http://relighted.c0n.de/?get=white#white")
+noextract=("rElighted-white.edj")
+md5sums=('ae1193e86e725c0f867e1db33e8ddc02')
+
+package() {
+  mkdir -p "$pkgdir/usr/share/elementary/themes"
+  cp rElighted-white.edj "$pkgdir/usr/share/elementary/themes/"
+}
