@@ -1,18 +1,18 @@
 # Maintainer: Felix Laurie von Massenbach <felix@erbridge.co.uk>
 
 pkgname=e-gtk-theme
-pkgver=0.17.0
+pkgver=0.19.3
 pkgrel=1
 pkgdesc="A GTK+ theme to match Enlightenment's default theme."
 arch=('any')
 url="https://github.com/tokiclover/e-gtk-theme"
-license=('custom')
+license=('unknown')
 depends=()
 source=("https://github.com/tokiclover/$pkgname/archive/$pkgver.tar.gz")
 noextract=()
-md5sums=('b0ebccf57bc1810615362340a3509eb6')
+md5sums=('c9323ee59feb990f45b851f1f71925d0')
 
 package() {
-  mkdir -p "$pkgdir/usr/share/themes"
-  cp -r "$pkgname-$pkgver" "$pkgdir/usr/share/themes/"
+  cd "$pkgname-$pkgver"
+  make prefix="$pkgdir/usr" install-all
 }
