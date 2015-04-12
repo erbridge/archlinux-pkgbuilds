@@ -1,0 +1,19 @@
+# Maintainer: Felix Laurie von Massenbach <felix@erbridge.co.uk>
+
+pkgname=whats-git
+pkgver=0.0.1
+pkgrel=1
+pkgdesc="A tool to quickly lookup something from the command line."
+arch=('any')
+url="https://github.com/arjun024/whats"
+license=('GPL')
+makedepends=()
+source=("$pkgname-$pkgver::git://github.com/arjun024/whats.git")
+noextract=()
+md5sums=('SKIP')
+
+package() {
+  cd "$pkgname-$pkgver"
+  mkdir -p "$pkgdir/usr/local/bin"
+  make PREFIX="$pkgdir/usr/local" install
+}
