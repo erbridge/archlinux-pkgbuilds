@@ -1,19 +1,19 @@
 # Maintainer: Felix Laurie von Massenbach <felix@erbridge.co.uk>
 
 pkgname=hexographer
-pkgver=1.79.0
+pkgver=1.80.2
 pkgrel=1
 pkgdesc="A tool for drawing hex maps for RPGs."
 arch=('any')
 url="http://www.hexographer.com/"
-license=('custom')
+license=('unknown')
 depends=('jre7-openjdk')
-source=('http://www.hexographer.com/releases/hexographer-pb.jar')
-noextract=('hexographer-pb.jar')
-md5sums=('dbbca313c1bc01648817adb600ff65e6')
+source=("http://www.hexographer.com/releases/hexographer-pb.jar")
+noextract=("hexographer-pb.jar")
+md5sums=('d556eb7024438fe222e9acbed2662431')
 
 build() {
-  echo "$(cd /opt/hexographer/; java -jar hexographer-pb.jar)" > hexographer
+  echo '$(cd /opt/hexographer/; java -jar hexographer-pb.jar)' > hexographer
   chmod +x hexographer
 }
 
